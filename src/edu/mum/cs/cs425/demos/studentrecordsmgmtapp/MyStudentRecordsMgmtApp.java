@@ -21,8 +21,30 @@ public class MyStudentRecordsMgmtApp {
         System.out.println("A student who gained admission into the University at least 30 years ago");
         getListOfPlatinumAlumniStudents(list);
 
-        System.out.println("Array filter");
+        System.out.println("Execution of method printHelloWorld");
         printHelloWorld(new int[]{5, 7, 35});
+
+        System.out.println("Execution of method findSecondBiggest");
+        findSecondBiggest(new int[]{1,2,3,4,5});
+    }
+
+    private static void findSecondBiggest(int[] ints) {
+        int max = ints[0];
+        int secondMax = ints[0];
+        for(int x =1; x < ints.length; x++)
+        {
+            if(ints[x] > max)
+            {
+                secondMax= max;
+                max = ints[x];
+            }
+            if(ints[x] > secondMax && ints[x] < max)
+            {
+                secondMax= ints[x];
+            }
+        }
+        System.out.println("The second biggest is : " + secondMax);
+
     }
 
     public static void printListOfStudents(List<Student> students) {
