@@ -2,6 +2,7 @@ package edu.mum.cs.cs425.demos.studentrecordsmgmtapp.model;
 
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Student {
     private int studentId;
@@ -38,6 +39,14 @@ public class Student {
         this.dateOfAdmission = dateOfAdmission;
     }
 
+    public int calculateAge(LocalDate birthDate, LocalDate currentDate) {
+        if ((birthDate != null) && (currentDate != null)) {
+            return Period.between(birthDate, currentDate).getYears();
+        } else {
+            return 0;
+        }
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -46,6 +55,8 @@ public class Student {
                 ", dateOfAdmission=" + dateOfAdmission +
                 '}';
     }
+
+
 
 
 }
